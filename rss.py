@@ -43,7 +43,7 @@ def create_feed_checker(feed_url):
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
-            message = f"🎥 **{entry.title}**\n\n```📅 {entry.pubDate}\n🗂 File Size: {entry.subsplease:size}\n⬇️ Download Link: {entry.link}```"
+            message = f"🎥 **{entry.title}**\n\n```{entry.link}```"
             try:
                 app.send_message(log_channel, message)
                 if app2 is not None:
